@@ -4,7 +4,15 @@ describe('Uber website', function() {
   test('Check title page', function (browser) {
     browser.waitForElementVisible('html')
     browser.assert.titleContains('Uber')
-    browser.expect.element('main').to.be.present
+    browser.expect.element('#main').to.be.present
+    browser.end();
+  });
+
+  test('Check buttons (connection and inscription)', function (browser) {
+    browser
+    .waitForElementVisible('html')
+    browser.expect.element('#main > nav > div > ul.bm.d4.d5.d6.d7.d8.bc.bh.du.dv.db.b7.b6.b8.bj > li:nth-child(1) > button').to.be.present
+    browser.expect.element('#main > nav > div > ul.bm.d4.d5.d6.d7.d8.bc.bh.du.dv.db.b7.b6.b8.bj > li:nth-child(2) > button').to.be.present
     browser.end();
   });
 
