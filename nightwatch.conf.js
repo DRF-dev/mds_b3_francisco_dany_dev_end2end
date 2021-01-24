@@ -1,27 +1,27 @@
 nightwatch_config = {
-    selenium : {
-      "start_process" : false,
-      "host" : "hub-cloud.browserstack.com",
-      "port" : 80
-    },
+  selenium : {
+    "start_process" : false,
+    "host" : "hub-cloud.browserstack.com",
+    "port" : 80
+  },
 
-    test_settings: {
-      default: {
-        desiredCapabilities: {
-          'browserstack.user': 'geoffrey22',
-          'browserstack.key': 'yAPbfqqtpsuvQ9ruQr9U',
-          'browser': 'chrome',
-          'name': 'Bstack-[Nightwatch] Test'
-        }
+  test_settings: {
+    default: {
+      desiredCapabilities: {
+        'browserstack.user': 'franciscodany1',
+        'browserstack.key': 'wP2xiMboK7mmn3oP2Rg4',
+        'browser': 'chrome',
+        'name': 'Bstack-[Nightwatch] Test'
       }
     }
-  };
-
-  // Code to copy seleniumhost/port into test settings
-  for(var i in nightwatch_config.test_settings){
-    var config = nightwatch_config.test_settings[i];
-    config['selenium_host'] = nightwatch_config.selenium.host;
-    config['selenium_port'] = nightwatch_config.selenium.port;
   }
+};
 
-  module.exports = nightwatch_config;
+// Code to copy seleniumhost/port into test settings
+for(var i in nightwatch_config.test_settings){
+  var config = nightwatch_config.test_settings[i];
+  config['selenium_host'] = nightwatch_config.selenium.host;
+  config['selenium_port'] = nightwatch_config.selenium.port;
+}
+
+module.exports = nightwatch_config;
